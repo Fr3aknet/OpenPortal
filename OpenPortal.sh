@@ -19,7 +19,7 @@ echo -n "Aquesta es la tema MASCARA:"
 ifconfig |grep -n1 $interface|grep Mask|cut -d' ' -f16|cut -d ':' -f2
 
 numk=`ifconfig |grep -n1 $interface|grep Mask|cut -d' ' -f16|cut -d ':' -f2|cut -d "." -f1`
-echo $v8
+echo $numk
 
 while [ $numk -eq 255 ]
 do
