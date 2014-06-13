@@ -15,7 +15,7 @@ ifconfig |grep -n1 $interface|grep "HWaddr"|cut -d' ' -f11
 #MASCARA
 mask=0
 nextp=1
-echo -n "Aquesta es la tema MASCARA:"
+echo -n "Aquesta es la teva MASCARA:"
 ifconfig |grep -n1 $interface|grep Mask|cut -d' ' -f16|cut -d ':' -f2
 
 numk=`ifconfig |grep -n1 $interface|grep Mask|cut -d' ' -f16|cut -d ':' -f2|cut -d "." -f1`
