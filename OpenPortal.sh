@@ -6,8 +6,8 @@ read interface
 clear
 #ip
 echo -n "Aquesta es la teva IP:"
-ifconfig |grep -n1 $interface|grep "inet addr"|cut -d' ' -f12|cut -d':' -f2
-
+ip=`ifconfig |grep -n1 $interface|grep "inet addr"|cut -d' ' -f12|cut -d':' -f2`
+echo $ip
 #MAC
 echo -n "Aquesta es la teva MAC:"
 ifconfig |grep -n1 $interface|grep "HWaddr"|cut -d' ' -f11
@@ -28,3 +28,5 @@ nextp=`expr $nextp + 1`
 done
 
 echo "Mask es $mask"
+netdiscover -i $interface -P -r $ip/$mask
+echo "Hola Hosts de la meva xarxa"
